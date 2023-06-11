@@ -1,9 +1,13 @@
-#include "test.cpp"
+//#include "test.cpp"
+#include <iostream>
+
+
+using namespace std;
 
 int main()
 {
     // Uncommit to run tests
-    unitTests();
+    //unitTests();
 
 
     return 0;
