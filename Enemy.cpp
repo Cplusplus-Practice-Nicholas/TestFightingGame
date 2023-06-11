@@ -19,6 +19,11 @@ public:
     {
         return damage + strength;
     }
+
+    void takeDamage(int damageValue)
+    {
+        health -= damageValue;
+    }
     
 
 };

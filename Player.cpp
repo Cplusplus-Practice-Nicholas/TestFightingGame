@@ -48,5 +48,10 @@ public:
         cout << "Base Damage: " << weaponDamage << endl;
     }
 
+    void takeDamage(int damageValue)
+    {
+        health -= damageValue;
+    }
+
 
 };
