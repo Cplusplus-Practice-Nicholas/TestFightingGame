@@ -16,6 +16,7 @@ int main()
     bool gameOn {1};
     string playerName;
     int playerInput{0};
+    int monsterRate {0};
     
     cout << "Enter the name of your Player: ";
     getline(cin,playerName);
@@ -25,6 +26,9 @@ int main()
 
     while(gameOn)
         {
+            srand(time(nullptr));
+            monsterRate = 1 + (rand() % 2);
+            
             cout << "Choose your next action" << endl;
             cout << "1 - Next Fight" << endl;
             cout << "2 - Show Stats" << endl;
@@ -37,7 +41,30 @@ int main()
                 {
                     case 1:
                         {
-                            cout << "Come back later" << endl;
+                            if(monsterRate == 1)
+                            {
+                                Rat monster = Rat();
+
+                                if(player.speed > monster.speed)
+                                {
+                                    /*
+                                        Attack Loop
+                                        Player will attack
+                                        Monster health decrease
+                                        Monster attack
+                                        Player health decrease
+                                        Repeat till one has no health
+                                        If Player loses show game over
+                                        If monster loses show player status and then options screen
+                                        */
+                                }
+                            }
+                            else if(monsterRate == 2)
+                            {
+                                Bat monster = Bat();
+                            }
+
+                            
                         }
                     break;
                     case 2:
