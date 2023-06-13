@@ -11,6 +11,7 @@ using namespace std;
 void fight(int rate, Player player);
 int playerAttack(int damage, int health);
 int monsterAttack(int damage, int health);
+Enemy createMonster();
 
 int main()
 {
@@ -21,7 +22,7 @@ int main()
     bool gameOn {1};
     string playerName;
     int playerInput{0};
-    int monsterRate {0};
+    //int monsterRate {0};
     
     cout << "Enter the name of your Player: ";
     getline(cin,playerName);
@@ -32,9 +33,6 @@ int main()
 
     while(gameOn)
         {
-            
-            srand(time(nullptr));
-            monsterRate = 1 + (rand() % 2);
             
             cout << "Choose your next action" << endl;
             cout << "1 - Next Fight" << endl;
@@ -75,17 +73,36 @@ int main()
     return 0;
 }
 
+Enemy createMonster()
+{
+    srand(time(nullptr));
+    int monsterRate = 1 + (rand() % 2);
+    if(monsterRate == 1)
+    {
+        Rat monster = Rat();
+        return monster;
+    }
+    else
+    {
+        Bat monster = Bat();
+        return monster;
+    }
 
-void fight(int rate, Player player)
+    
+}
+
+void fight(int rate, Player &player)
 {
     bool inCombat = 1;
     int playerOption{ 0 };
     int playerDamage = player.attackDamage();
-   
+    Enemy monster = createMonster();
+    int monsterDamage = monster.attackDamage();
+    
     if (rate == 1)
     {
         Rat monster = Rat();
-        int monsterDamage = monster.attackDamage();
+        
 
         if (player.speed > monster.speed)
         {
