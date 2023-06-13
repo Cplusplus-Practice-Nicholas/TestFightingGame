@@ -28,6 +28,7 @@ int main()
     Player player(playerName);
     cout <<"\n\n";
     player.showStats();
+    cout << '\n';
 
     while(gameOn)
         {
@@ -42,7 +43,7 @@ int main()
             cout << "4 - Quit" << endl;
             cout << "\nEnter the number: ";
             cin >> playerInput;
-
+            system("clear");
             switch(playerInput)
                 {
                     case 1:
@@ -98,26 +99,28 @@ void fight(int rate, Player player)
                 cout << "2 - Run (Not Implamented)" << endl;
                 cout << "Your Choice: ";
                 cin >> playerOption;
-
+                system("clear");
                 if (playerOption == 1)
                 {
-                    monster.health = playerAttack(playerDamage, monster.health);
+                    monster.takeDamage(playerDamage);
                     if (monster.health <= 0)
                     {
                         inCombat = 0;
                         cout << "You killed " << monster.name << endl;
+                        break;
                     }
                     else
                     {
                         cout << monster.name << " is at " << monster.health << " HP" << endl;
                     }
 
-                    player.health = monsterAttack(monsterDamage, player.health);
+                    player.takeDamage(monsterDamage);
 
                     if (player.health <= 0)
                     {
                         inCombat = 0;
                         cout << monster.name << " killed you" << endl;
+                        break;
                     }
                     else
                     {
@@ -139,16 +142,17 @@ void fight(int rate, Player player)
                 cout << "2 - Run (Not Implamented)" << endl;
                 cout << "Your Choice: ";
                 cin >> playerOption;
-
+                system("clear");
                 if (playerOption == 1)
                 {
 
-                    player.health = monsterAttack(monsterDamage, player.health);
+                    player.takeDamage(monsterDamage);
 
                     if (player.health <= 0)
                     {
                         inCombat = 0;
                         cout << monster.name << " killed you" << endl;
+                        break;
                     }
                     else
                     {
@@ -156,11 +160,12 @@ void fight(int rate, Player player)
                     }
 
 
-                    monster.health = playerAttack(playerDamage, monster.health);
+                    monster.takeDamage(playerDamage);
                     if (monster.health <= 0)
                     {
                         inCombat = 0;
                         cout << "You killed " << monster.name << endl;
+                        break;
                     }
                     else
                     {
@@ -191,26 +196,28 @@ void fight(int rate, Player player)
                 cout << "2 - Run (Not Implamented)" << endl;
                 cout << "Your Choice: ";
                 cin >> playerOption;
-
+                system("clear");
                 if (playerOption == 1)
                 {
-                    monster.health = playerAttack(playerDamage, monster.health);
+                    monster.takeDamage(playerDamage);
                     if (monster.health <= 0)
                     {
                         inCombat = 0;
                         cout << "You killed " << monster.name << endl;
+                        break;
                     }
                     else
                     {
                         cout << monster.name << " is at " << monster.health << " HP" << endl;
                     }
 
-                    player.health = monsterAttack(monsterDamage, player.health);
+                    player.takeDamage(monsterDamage);
 
                     if (player.health <= 0)
                     {
                         inCombat = 0;
                         cout << monster.name << " killed you" << endl;
+                        break;
                     }
                     else
                     {
@@ -236,16 +243,17 @@ void fight(int rate, Player player)
                 cout << "2 - Run (Not Implamented)" << endl;
                 cout << "Your Choice: ";
                 cin >> playerOption;
-
+                system("clear");
                 if (playerOption == 1)
                 {
 
-                    player.health = monsterAttack(monsterDamage, player.health);
+                    player.takeDamage(monsterDamage);
 
                     if (player.health <= 0)
                     {
                         inCombat = 0;
                         cout << monster.name << " killed you" << endl;
+                        break;
                     }
                     else
                     {
@@ -253,11 +261,12 @@ void fight(int rate, Player player)
                     }
 
 
-                    monster.health = playerAttack(playerDamage, monster.health);
+                    monster.takeDamage(playerDamage);
                     if (monster.health <= 0)
                     {
                         inCombat = 0;
                         cout << "You killed " << monster.name << endl;
+                        break;
                     }
                     else
                     {
@@ -273,21 +282,4 @@ void fight(int rate, Player player)
         }
     
     }
-}
-
-
-
-int playerAttack(int playerDamage, int monsterHealth)
-{
-    monsterHealth -= playerDamage;
-    return monsterHealth;
-}
-
-int monsterAttack( int monsterDamage, int playerHealth)
-{
-    
-    playerHealth -= monsterDamage;
-   
-
-    return playerHealth;
 }

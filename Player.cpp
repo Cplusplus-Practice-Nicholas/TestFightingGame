@@ -38,6 +38,7 @@ public:
     void showStats()
     {
         cout << "Player: " << name << endl;
+        cout << "Health: " << health << endl;
         cout << "Strength: " << strength << endl;
         cout << "Speed: " << speed << endl;
     }
@@ -48,9 +49,9 @@ public:
         cout << "Base Damage: " << weaponDamage << endl;
     }
 
-    void takeDamage(int damageValue)
+   void takeDamage(int damageValue)
     {
-        health -= damageValue;
+        Player::health = Player::health - damageValue;
     }
 
 

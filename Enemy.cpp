@@ -22,7 +22,7 @@ public:
 
     void takeDamage(int damageValue)
     {
-        health -= damageValue;
+        health = health - damageValue;
     }
     
 
