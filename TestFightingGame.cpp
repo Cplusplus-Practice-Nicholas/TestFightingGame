@@ -46,7 +46,14 @@ int main()
                 {
                     case 1:
                         {
-                        fight(player);
+                            fight(player);
+                            if(player.health <= 0)
+                            {
+                                gameOn = 0;
+                                cout << "***********************\n" << endl; 
+                                cout << "GAME OVER" << endl;
+                                cout << "\n*********************\n" << endl;
+                            }
                         }
                     break;
                     case 2:
