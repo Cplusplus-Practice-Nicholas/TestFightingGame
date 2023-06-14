@@ -67,6 +67,10 @@ int main()
                         {
                             gameOn = 0;
                         }
+                    default:
+                        {
+                            cout << "\nInvalid Entery. Please enter a valid value.\n" << endl;
+                        }
                 }
             
         }
