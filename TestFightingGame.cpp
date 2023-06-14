@@ -8,10 +8,13 @@
 
 using namespace std;
 
-void fight(int rate, Player player);
+void fight(Player &player);
 int playerAttack(int damage, int health);
 int monsterAttack(int damage, int health);
 Enemy createMonster();
+void displayFightMenu(Enemy &monster);
+bool playerAttacksFirst(Enemy &monster, Player &player);
+bool monsterAttacksFirst(Enemy &monster, Player &player);
 
 int main()
 {
@@ -46,7 +49,7 @@ int main()
                 {
                     case 1:
                         {
-                        fight(monsterRate, player);
+                        fight(player);
                         }
                     break;
                     case 2:
@@ -90,213 +93,120 @@ Enemy createMonster()
 
     
 }
+void displayFightMenu(Enemy &monster)
+{
+    cout << "You are being attacked by a " << monster.name << endl;
+    cout << "You attack first" << endl;
+    cout << "What do you choose to do?" << endl;
+    cout << "1 - Attack" << endl;
+    cout << "2 - Run (Not Implamented)" << endl;
+    cout << "Your Choice: ";
+}
 
-void fight(int rate, Player &player)
+bool playerAttacksFirst(Enemy &monster, Player &player)
+{
+    int playerDamage = player.attackDamage();
+    int monsterDamage = monster.attackDamage();
+    bool combat {1};
+    
+    monster.takeDamage(playerDamage);
+    if (monster.health <= 0)
+    {
+        combat = 0;
+        cout << "You killed " << monster.name << endl;
+    }
+    else
+    {
+        cout << monster.name << " is at " << monster.health << " HP" << endl;
+    }
+
+    player.takeDamage(monsterDamage);
+
+    if (player.health <= 0)
+    {
+        combat = 0;
+        cout << monster.name << " killed you" << endl;
+    }
+    else
+    {
+        cout << "You are at " << player.health << " HP" << endl;
+    }
+
+    return combat;
+
+}
+
+bool monsterAttacksFirst(Enemy &monster, Player &player)
+{
+    int playerDamage = player.attackDamage();
+    int monsterDamage = monster.attackDamage();
+    bool combat {1};
+    
+    player.takeDamage(monsterDamage);
+    if (player.health <= 0)
+    {
+        combat = 0;
+        cout << monster.name << " killed you" << endl;
+    }
+    else
+    {
+        cout << "You are at " << player.health << " HP" << endl;
+    }
+                
+    monster.takeDamage(playerDamage);
+    if (monster.health <= 0)
+    {
+        combat = 0;
+        cout << "You killed " << monster.name << endl;
+    }
+    else
+    {
+        cout << monster.name << " is at " << monster.health << " HP" << endl;
+    }
+
+    return combat;
+    
+}
+
+void fight(Player &player)
 {
     bool inCombat = 1;
     int playerOption{ 0 };
-    int playerDamage = player.attackDamage();
     Enemy monster = createMonster();
-    int monsterDamage = monster.attackDamage();
-    
-    if (rate == 1)
+
+    if (player.speed > monster.speed)
     {
-        Rat monster = Rat();
-        
-
-        if (player.speed > monster.speed)
+        while (inCombat)
         {
-           
-            while (inCombat)
+            displayFightMenu(monster);
+            cin >> playerOption;
+            system("clear");
+            if (playerOption == 1)
             {
-                cout << "You are being attacked by a " << monster.name << endl;
-                cout << "You attack first" << endl;
-                cout << "What do you choose to do?" << endl;
-                cout << "1 - Attack" << endl;
-                cout << "2 - Run (Not Implamented)" << endl;
-                cout << "Your Choice: ";
-                cin >> playerOption;
-                system("clear");
-                if (playerOption == 1)
-                {
-                    monster.takeDamage(playerDamage);
-                    if (monster.health <= 0)
-                    {
-                        inCombat = 0;
-                        cout << "You killed " << monster.name << endl;
-                        break;
-                    }
-                    else
-                    {
-                        cout << monster.name << " is at " << monster.health << " HP" << endl;
-                    }
-
-                    player.takeDamage(monsterDamage);
-
-                    if (player.health <= 0)
-                    {
-                        inCombat = 0;
-                        cout << monster.name << " killed you" << endl;
-                        break;
-                    }
-                    else
-                    {
-                        cout << "You are at " << player.health << " HP" << endl;
-                    }
-
-                }
-               /* system("cls");*/
+                inCombat = playerAttacksFirst(monster, player);
+            }
+            else if (playerOption == 2)
+            {
+                cout << "\nNot Implamented\n" << endl;
             }
         }
-        else if (player.speed < monster.speed)
-        {
-            while (inCombat)
-            {
-                cout << "You are being attacked by a " << monster.name << endl;
-                cout << monster.name << " attacks first." << endl;
-                cout << "What do you choose to do?" << endl;
-                cout << "1 - Attack" << endl;
-                cout << "2 - Run (Not Implamented)" << endl;
-                cout << "Your Choice: ";
-                cin >> playerOption;
-                system("clear");
-                if (playerOption == 1)
-                {
-
-                    player.takeDamage(monsterDamage);
-
-                    if (player.health <= 0)
-                    {
-                        inCombat = 0;
-                        cout << monster.name << " killed you" << endl;
-                        break;
-                    }
-                    else
-                    {
-                        cout << "You are at " << player.health << " HP" << endl;
-                    }
-
-
-                    monster.takeDamage(playerDamage);
-                    if (monster.health <= 0)
-                    {
-                        inCombat = 0;
-                        cout << "You killed " << monster.name << endl;
-                        break;
-                    }
-                    else
-                    {
-                        cout << monster.name << " is at " << monster.health << " HP" << endl;
-                    }
-                }
-                else if (playerOption == 2)
-                {
-                    cout << "\nNot Implamented\n" << endl;
-                }
-                //system("cls");
-            }
-        }
-       
     }
-    else if (rate == 2)
+    else if (player.speed < monster.speed)
     {
-        Bat monster = Bat();
-        int monsterDamage = monster.attackDamage();
-
-        if (player.speed > monster.speed)
+        while (inCombat)
         {
-            while (inCombat)
+            displayFightMenu(monster);
+            cin >> playerOption;
+            system("clear");
+            if (playerOption == 1)
             {
-                cout << "You are being attacked by a " << monster.name << endl;
-                cout << "What do you choose to do?" << endl;
-                cout << "1 - Attack" << endl;
-                cout << "2 - Run (Not Implamented)" << endl;
-                cout << "Your Choice: ";
-                cin >> playerOption;
-                system("clear");
-                if (playerOption == 1)
-                {
-                    monster.takeDamage(playerDamage);
-                    if (monster.health <= 0)
-                    {
-                        inCombat = 0;
-                        cout << "You killed " << monster.name << endl;
-                        break;
-                    }
-                    else
-                    {
-                        cout << monster.name << " is at " << monster.health << " HP" << endl;
-                    }
-
-                    player.takeDamage(monsterDamage);
-
-                    if (player.health <= 0)
-                    {
-                        inCombat = 0;
-                        cout << monster.name << " killed you" << endl;
-                        break;
-                    }
-                    else
-                    {
-                        cout << "You are at " << player.health << " HP" << endl;
-                    }
-
-                }
-                else if (playerOption == 2)
-                {
-                    cout << "\nNot Implamented\n" << endl;
-                }
-                //system("cls");
+                inCombat = monsterAttacksFirst(monster, player);
+            }
+            else if (playerOption == 2)
+            {
+                cout << "\nNot Implamented\n" << endl;
             }
         }
-        else if (player.speed < monster.speed)
-        {
-            while (inCombat)
-            {
-                cout << "You are being attacked by a " << monster.name << endl;
-                cout << monster.name << " attacks first." << endl;
-                cout << "What do you choose to do?" << endl;
-                cout << "1 - Attack" << endl;
-                cout << "2 - Run (Not Implamented)" << endl;
-                cout << "Your Choice: ";
-                cin >> playerOption;
-                system("clear");
-                if (playerOption == 1)
-                {
-
-                    player.takeDamage(monsterDamage);
-
-                    if (player.health <= 0)
-                    {
-                        inCombat = 0;
-                        cout << monster.name << " killed you" << endl;
-                        break;
-                    }
-                    else
-                    {
-                        cout << "You are at " << player.health << " HP" << endl;
-                    }
-
-
-                    monster.takeDamage(playerDamage);
-                    if (monster.health <= 0)
-                    {
-                        inCombat = 0;
-                        cout << "You killed " << monster.name << endl;
-                        break;
-                    }
-                    else
-                    {
-                        cout << monster.name << " is at " << monster.health << " HP" << endl;
-                    }
-                }
-                else if (playerOption == 2)
-                {
-                    cout << "\nNot Implamented\n" << endl;
-                }
-                //system("cls");
-            }
-        }
-    
     }
 }
+
