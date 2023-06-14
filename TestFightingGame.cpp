@@ -3,8 +3,7 @@
 #include <string>
 #include "Player.cpp"
 #include "Enemy.cpp"
-//#include "Bat.cpp"
-//#include "Rat.cpp"
+
 
 using namespace std;
 
