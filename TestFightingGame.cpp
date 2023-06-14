@@ -8,8 +8,6 @@
 using namespace std;
 
 void fight(Player &player);
-int playerAttack(int damage, int health);
-int monsterAttack(int damage, int health);
 Enemy createMonster();
 void displayFightMenu(Enemy &monster);
 bool playerAttacksFirst(Enemy &monster, Player &player);
