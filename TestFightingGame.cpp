@@ -109,7 +109,7 @@ void displayFightMenu(Enemy &monster)
     cout << "You attack first" << endl;
     cout << "What do you choose to do?" << endl;
     cout << "1 - Attack" << endl;
-    cout << "2 - Run (Not Implamented)" << endl;
+    cout << "2 - Run" << endl;
     cout << "Your Choice: ";
 }
 
@@ -182,18 +182,20 @@ bool hasRanAway()
 {
     srand(time(nullptr));
     int playerRandom{ 1 + (rand() % 10) };
+    cout << playerRandom << endl;
 
-    srand(time(nullptr));
+    srand(time(nullptr) + 1);
     int monsterRandom{ 1 + (rand() % 10) };
-
-    if (playerRandom > monsterRandom)
+    cout << monsterRandom << endl;
+    
+    if (playerRandom >= monsterRandom)
     {
         cout << "You got away" << endl;
-        return 1;
+        return 0;
     }
 
     cout << "You did't get away" << endl;
-    return 0;
+    return 1;
 }
 
 void fight(Player &player)
@@ -216,7 +218,7 @@ void fight(Player &player)
             }
             else if (playerOption == 2)
             {
-                cout << "\nNot Implamented\n" << endl;
+                inCombat = hasRanAway();
             }
         }
     }
@@ -234,7 +236,7 @@ void fight(Player &player)
             }
             else if (playerOption == 2)
             {
-                cout << "\nNot Implamented\n" << endl;
+                inCombat = hasRanAway();
             }
         }
     }
