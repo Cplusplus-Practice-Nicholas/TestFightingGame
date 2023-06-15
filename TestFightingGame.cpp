@@ -12,6 +12,7 @@ Enemy createMonster();
 void displayFightMenu(Enemy &monster);
 bool playerAttacksFirst(Enemy &monster, Player &player);
 bool monsterAttacksFirst(Enemy &monster, Player &player);
+bool hasRanAway();
 
 int main()
 {
@@ -41,7 +42,8 @@ int main()
             cout << "4 - Quit" << endl;
             cout << "\nEnter the number: ";
             cin >> playerInput;
-            system("clear");
+            //system("clear");
+            system("cls");
             switch(playerInput)
                 {
                     case 1:
@@ -176,6 +178,24 @@ bool monsterAttacksFirst(Enemy &monster, Player &player)
     
 }
 
+bool hasRanAway()
+{
+    srand(time(nullptr));
+    int playerRandom{ 1 + (rand() % 10) };
+
+    srand(time(nullptr));
+    int monsterRandom{ 1 + (rand() % 10) };
+
+    if (playerRandom > monsterRandom)
+    {
+        cout << "You got away" << endl;
+        return 1;
+    }
+
+    cout << "You did't get away" << endl;
+    return 0;
+}
+
 void fight(Player &player)
 {
     bool inCombat = 1;
@@ -188,7 +208,8 @@ void fight(Player &player)
         {
             displayFightMenu(monster);
             cin >> playerOption;
-            system("clear");
+            //system("clear");
+            system("cls");
             if (playerOption == 1)
             {
                 inCombat = playerAttacksFirst(monster, player);
@@ -205,7 +226,8 @@ void fight(Player &player)
         {
             displayFightMenu(monster);
             cin >> playerOption;
-            system("clear");
+            //system("clear");
+            system("cls");
             if (playerOption == 1)
             {
                 inCombat = monsterAttacksFirst(monster, player);
