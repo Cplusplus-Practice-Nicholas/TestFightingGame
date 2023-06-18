@@ -7,7 +7,8 @@ using namespace std;
 
 class Enemy
 {
-    // Private Atrrabutes
+public:
+    // Atrrabutes
     int health{ 0 };
     string name{ "y"};
     int strength{ 0 };

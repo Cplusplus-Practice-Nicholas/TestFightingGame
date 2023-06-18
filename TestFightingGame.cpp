@@ -41,8 +41,8 @@ int main()
             cout << "4 - Quit" << endl;
             cout << "\nEnter the number: ";
             cin >> playerInput;
-            //system("clear");
-            system("cls");
+            system("clear");
+           // system("cls");
             switch(playerInput)
                 {
                     case 1:
@@ -77,6 +77,7 @@ int main()
                         {
                             gameOn = 0;
                         }
+                        break;
                     default:
                         {
                             cout << "\nInvalid Entery. Please enter a valid value.\n" << endl;
@@ -88,7 +89,7 @@ int main()
 }
 
 
-Enemy createMonster()
+/*Enemy createMonster()
 {
     srand(time(nullptr));
     int monsterRate = 1 + (rand() % 2);
@@ -105,6 +106,7 @@ Enemy createMonster()
 
     
 }
+*/
 void displayFightMenu(Enemy &monster)
 {
     cout << "You are being attacked by a " << monster.name << endl;
@@ -207,7 +209,7 @@ void fight(Player &player)
 {
     bool inCombat = 1;
     int playerOption{ 0 };
-    Enemy monster = createMonster();
+    Enemy monster = Enemy::createMonster();
 
     if (player.speed > monster.speed)
     {
