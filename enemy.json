@@ -1,25 +1,22 @@
 {
-    "Rat":
+    "1":
     {
-        "id": 1,
         "name": "Rat",
         "health": 7,
         "strength": 5,
         "speed": 4,
         "damage": 3
     },
-    "Bat":
+    "2":
     {
-        "id": 2,
         "name": "Bat",
         "health": 5,
         "strength": 3,
         "speed": 7,
         "damage": 2
     },
-    "Goblin":
+    "3":
     {
-        "id": 3,
         "name": "Goblin",
         "health": 7,
         "strength": 5,
