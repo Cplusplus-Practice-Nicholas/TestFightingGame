@@ -1,19 +1,29 @@
 #include <iostream>
+#include <fstream>
 #include <string>
+#include <nlohmann/json.hpp>
 
 using namespace std;
 
 class Enemy
 {
 public:
-    // Public Atrrabutes
+    // Atrrabutes
     int health{ 0 };
-    string name{ "yy"};
+    string name{ "y"};
     int strength{ 0 };
     int speed{ 0 };
     int damage{ 0 };
-    time_t currentTime = time(NULL);
 
+    Enemy(string a, int b, int c, int d, int e)
+    {
+        name = a;
+        health = b;
+        strength = c;
+        speed = d;
+        damage = e;
+    }
+    
     // Methods
     int attackDamage()
     {
@@ -24,35 +34,24 @@ public:
     {
         health = health - damageValue;
     }
-    
 
-};
-
-class Bat : public Enemy
-{
-public:
-    int rate{ 2 };
-    Bat()
+    static Enemy createMonster()
     {
-        health = 5;
-        name = "Bat";
-        strength = 3;
-        speed = 7;
-        damage = 2;
-    }
-};
+        using json = nlohmann::json;
 
+        // Gets random number and converts to a string
+        srand(time(nullptr));
+        int randomId = 1 + (rand() % 3);
+        string convertedId = to_string(randomId);
 
-class Rat : public Enemy
-{
-public:
-    int rate{ 1 };
-    Rat()
-    {
-        health = 7;
-        name = "Rat";
-        strength = 5;
-        speed = 4;
-        damage = 3;
+        // Open a JSON file
+        ifstream f("enemy.json");
+        json data = json::parse(f);
+
+        json monsterData = data[convertedId];
+
+        Enemy monster = Enemy(monsterData["name"], monsterData["health"], monsterData["strength"], monsterData["speed"], monsterData["damage"]);
+
+        return monster;
     }
 };
