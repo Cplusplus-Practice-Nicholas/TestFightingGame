@@ -15,6 +15,7 @@ public:
     int speed;
     int weaponDamage{ 2 };
     time_t currentTime = time(NULL);
+    int score{0};
 
     // Constructor
     Player(string x)
@@ -38,6 +39,7 @@ public:
     void showStats()
     {
         cout << "Player: " << name << endl;
+        cout << "Score: " << score << endl;
         cout << "Health: " << health << endl;
         cout << "Strength: " << strength << endl;
         cout << "Speed: " << speed << endl;
@@ -52,6 +54,11 @@ public:
    void takeDamage(int damageValue)
     {
         Player::health = Player::health - damageValue;
+    }
+
+    void updateScore()
+    {
+        score += 1;
     }
 
 
