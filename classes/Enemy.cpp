@@ -45,7 +45,7 @@ public:
         string convertedId = to_string(randomId);
 
         // Open a JSON file
-        ifstream f("enemy.json");
+        ifstream f("json/enemy.json");
         json data = json::parse(f);
 
         json monsterData = data[convertedId];
