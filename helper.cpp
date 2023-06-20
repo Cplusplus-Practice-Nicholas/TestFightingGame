@@ -1,7 +1,7 @@
 #pragma once 
 #include <iostream>
-#include "Enemy.cpp"
-#include "Player.cpp"
+#include "classes/Enemy.cpp"
+#include "classes/Player.cpp"
 
 using namespace std;
 
