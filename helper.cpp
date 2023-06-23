@@ -2,7 +2,6 @@
 #include <iostream>
 #include "classes/Enemy.cpp"
 #include "classes/Player.cpp"
-#include "classes/Room.cpp"
 
 using namespace std;
 
@@ -13,10 +12,10 @@ bool playerAttacksFirst(Enemy &monster, Player &player);
 bool monsterAttacksFirst(Enemy &monster, Player &player);
 bool hasRanAway();
 
-
-
 void displayFightMenu(Enemy &monster)
 {
+
+        
     cout << "\nYou are being attacked by a " << monster.name << endl;
     cout << "You attack first" << endl;
     cout << "What do you choose to do?" << endl;

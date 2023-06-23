@@ -4,6 +4,7 @@
 //#include "Player.cpp"
 //#include "Enemy.cpp"
 #include "helper.cpp"
+#include "classes/Room.cpp"
 
 
 using namespace std;
@@ -42,17 +43,27 @@ int main()
                 {
                     case 1:
                         {
-                            fight(player);
-                            if(player.health <= 0)
+                            int *randomValues{Room::generateRoom()};
+                            if(randomValues[0] == 1)
                             {
-                                gameOn = 0;
-                                //system("clear");
-                                //system("cls");
-                                cout << "***********************\n" << endl; 
-                                cout << "GAME OVER" << endl;
-                                cout << "\nFinal Score: " << player.score << endl;
-                                cout << "\n*********************\n" << endl;
+                                fight(player);
+                                if(player.health <= 0)
+                                {
+                                    gameOn = 0;
+                                    //system("clear");
+                                    //system("cls");
+                                    cout << "***********************\n" << endl; 
+                                    cout << "GAME OVER" << endl;
+                                    cout << "\nFinal Score: " << player.score << endl;
+                                    cout << "\n*********************\n" << endl;
+                                }
                             }
+                            else
+                            {
+                                cout << "TEST";
+                            }
+                            
+                            
                         }
                     break;
                     case 2:

@@ -9,7 +9,7 @@ class Room
 
 public:
 
-static void generateRoom()
+static int* generateRoom()
 {
 
      string description[3] 
@@ -34,6 +34,10 @@ static void generateRoom()
 
     cout << description[randomDescription] << endl;
     cout << actionPhrase[randomAction] << endl;
+
+    static int arr[2] = {randomDescription, randomAction};
+
+    return arr;
 }
 
 };
