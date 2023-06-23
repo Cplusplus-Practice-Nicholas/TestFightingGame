@@ -2,6 +2,7 @@
 #include <iostream>
 #include "classes/Enemy.cpp"
 #include "classes/Player.cpp"
+#include "classes/Room.cpp"
 
 using namespace std;
 
