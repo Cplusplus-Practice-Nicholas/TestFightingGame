@@ -29,6 +29,9 @@ public:
     int attackDamage();
     void takeDamage(int damageValue);
     static Enemy createMonster();
+    int getHealth();
+    int getSpeed();
+    std::string getName();
 };
 
 #endif

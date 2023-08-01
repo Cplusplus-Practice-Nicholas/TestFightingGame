@@ -47,14 +47,14 @@ int main()
                             if(randomValues[0] == 1)
                             {
                                 fight(player);
-                                if(player.health <= 0)
+                                if(player.getHealth() <= 0)
                                 {
                                     gameOn = 0;
                                     //system("clear");
                                     //system("cls");
                                     cout << "***********************\n" << endl; 
                                     cout << "GAME OVER" << endl;
-                                    cout << "\nFinal Score: " << player.score << endl;
+                                   // cout << "\nFinal Score: " << player.score << endl;
                                     cout << "\n*********************\n" << endl;
                                 }
                             }

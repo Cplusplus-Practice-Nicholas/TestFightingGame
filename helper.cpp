@@ -1,7 +1,7 @@
 #pragma once 
 #include <iostream>
-#include "classes/Enemy.cpp"
-#include "classes/Player.cpp"
+#include "classes/Enemy.h"
+#include "classes/Player.h"
 
 using namespace std;
 
@@ -16,7 +16,7 @@ void displayFightMenu(Enemy &monster)
 {
 
         
-    cout << "\nYou are being attacked by a " << monster.name << endl;
+    cout << "\nYou are being attacked by a " << monster.getName() << endl;
     cout << "You attack first" << endl;
     cout << "What do you choose to do?" << endl;
     cout << "1 - Attack" << endl;
@@ -31,29 +31,29 @@ bool playerAttacksFirst(Enemy &monster, Player &player)
     bool combat {1};
     
     monster.takeDamage(playerDamage);
-    if (monster.health <= 0)
+    if (monster.getHealth() <= 0)
     {
         combat = 0;
         player.updateScore();
-        cout << "\nYou killed " << monster.name << endl;
+        cout << "\nYou killed " << monster.getName() << endl;
         return combat;
     }
     else
     {
-        cout << '\n' << monster.name << " is at " << monster.health << " HP\n" << endl;
+        cout << '\n' << monster.getName() << " is at " << monster.getHealth() << " HP\n" << endl;
     }
 
     player.takeDamage(monsterDamage);
 
-    if (player.health <= 0)
+    if (player.getHealth() <= 0)
     {
         combat = 0;
-        cout << '\n' << monster.name << " killed you\n" << endl;
+        cout << '\n' << monster.getName() << " killed you\n" << endl;
         return combat;
     }
     else
     {
-        cout << "\nYou are at " << player.health << " HP\n" << endl;
+        cout << "\nYou are at " << player.getHealth() << " HP\n" << endl;
     }
 
     return combat;
@@ -67,27 +67,27 @@ bool monsterAttacksFirst(Enemy &monster, Player &player)
     bool combat {1};
     
     player.takeDamage(monsterDamage);
-    if (player.health <= 0)
+    if (player.getHealth() <= 0)
     {
         combat = 0;
-        cout << '\n' << monster.name << " killed you" << endl;
+        cout << '\n' << monster.getName() << " killed you" << endl;
         return combat;
     }
     else
     {
-        cout << "\nYou are at " << player.health << " HP" << endl;
+        cout << "\nYou are at " << player.getHealth() << " HP" << endl;
     }
                 
     monster.takeDamage(playerDamage);
-    if (monster.health <= 0)
+    if (monster.getHealth() <= 0)
     {
         combat = 0;
         player.updateScore();
-        cout << "\nYou killed " << monster.name << endl;
+        cout << "\nYou killed " << monster.getName() << endl;
     }
     else
     {
-        cout << '\n' << monster.name << " is at " << monster.health << " HP" << endl;
+        cout << '\n' << monster.getName() << " is at " << monster.getHealth() << " HP" << endl;
     }
 
     return combat;
@@ -120,7 +120,7 @@ void fight(Player &player)
     int playerOption{ 0 };
     Enemy monster = Enemy::createMonster();
 
-    if (player.speed > monster.speed)
+    if (player.getSpeed() > monster.getSpeed())
     {
         while (inCombat)
         {
@@ -138,7 +138,7 @@ void fight(Player &player)
             }
         }
     }
-    else if (player.speed < monster.speed)
+    else if (player.getSpeed() < monster.getSpeed())
     {
         while (inCombat)
         {

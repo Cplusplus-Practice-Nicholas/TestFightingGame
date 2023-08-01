@@ -33,6 +33,8 @@ public:
     void showCurrentWeapon();
     void takeDamage(int damageValue);
     void updateScore();
+    int getHealth();
+    int getSpeed();
 };
 
 #endif
