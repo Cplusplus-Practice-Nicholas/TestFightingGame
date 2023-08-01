@@ -1,5 +1,14 @@
 #include "Player.h"
 
+// Constructor
+Player::Player(std::string x)
+    {
+        name = x;
+        strength = randomNumber(currentTime);
+        speed = randomNumber(currentTime + 1);
+    }
+
+// Member Methods
 int Player::randomNumber(time_t num)
     {
         srand((unsigned) num);

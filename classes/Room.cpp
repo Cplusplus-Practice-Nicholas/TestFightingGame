@@ -35,9 +35,11 @@ static int* generateRoom()
     cout << description[randomDescription] << endl;
     cout << actionPhrase[randomAction] << endl;
 
-    static int arr[2] = {randomDescription, randomAction};
+    int arr[2] = {randomDescription, randomAction};
 
-    return arr;
+    int *arr_ptr = arr;
+    
+    return arr_ptr;
 }
 
 };

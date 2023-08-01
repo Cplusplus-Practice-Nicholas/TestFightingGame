@@ -1,9 +1,10 @@
+#ifndef _ENEMY_H_
+#define _ENEMY_H_
+
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <nlohmann/json.hpp>
-
-#ifndef _Enemy_h_
 
 class Enemy
 {
@@ -17,14 +18,8 @@ private:
 
 public:
 //  Public Constructor
-    Enemy(std::string a, int b, int c, int d, int e)
-    {
-        name = a;
-        health = b;
-        strength = c;
-        speed = d;
-        damage = e;
-    }    
+    Enemy(std::string a, int b, int c, int d, int e);
+
 // Public Methods
     int attackDamage();
     void takeDamage(int damageValue);

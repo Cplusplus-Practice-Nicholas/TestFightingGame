@@ -1,5 +1,16 @@
 #include "Enemy.h"    
-    
+
+// Constructor
+Enemy::Enemy(std::string a, int b, int c, int d, int e)
+{
+    name = a;
+    health = b;
+    strength = c;
+    speed = d;
+    damage = e;
+}    
+
+// Member Methods
 int Enemy::attackDamage()
 {
     return damage + strength;
@@ -40,7 +51,7 @@ int Enemy::getSpeed()
     return speed;
 }
 
-std::string getName()
+std::string Enemy::getName()
 {
     return name;
 }

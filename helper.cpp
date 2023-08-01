@@ -1,4 +1,4 @@
-#pragma once 
+
 #include <iostream>
 #include "classes/Enemy.h"
 #include "classes/Player.h"
@@ -6,7 +6,7 @@
 using namespace std;
 
 void fight(Player &player);
-Enemy createMonster();
+//Enemy createMonster();
 void displayFightMenu(Enemy &monster);
 bool playerAttacksFirst(Enemy &monster, Player &player);
 bool monsterAttacksFirst(Enemy &monster, Player &player);

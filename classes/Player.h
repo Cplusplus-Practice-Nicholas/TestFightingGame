@@ -1,9 +1,10 @@
+#ifndef _PLAYER_H_
+#define _PLAYER_H_
+
 #include <string>
 #include <vector>
 #include <iostream>
 #include <stdlib.h>
-
-#ifndef _Player_h_
 
 class Player
 {
@@ -19,12 +20,7 @@ private:
 
 public:
 // Public Constructor
-    Player(std::string x)
-    {
-        name = x;
-        strength = randomNumber(currentTime);
-        speed = randomNumber(currentTime + 1);
-    }
+    Player(std::string x);
 
 // Public Methods
     int randomNumber(time_t num);

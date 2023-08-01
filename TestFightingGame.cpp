@@ -1,8 +1,8 @@
 //#include "test.cpp"
 #include <iostream>
 #include <string>
-//#include "Player.cpp"
-//#include "Enemy.cpp"
+#include "classes/Player.h"
+#include "classes/Enemy.h"
 #include "helper.cpp"
 #include "classes/Room.cpp"
 
