@@ -3,7 +3,7 @@
 #include <string>
 #include "classes/Player.h"
 #include "classes/Enemy.h"
-#include "helper.cpp"
+#include "helper.h"
 #include "classes/Room.cpp"
 
 

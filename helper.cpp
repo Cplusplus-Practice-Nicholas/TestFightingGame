@@ -1,21 +1,12 @@
-
 #include <iostream>
-#include "classes/Enemy.h"
-#include "classes/Player.h"
+#include "helper.h"
 
 using namespace std;
 
-void fight(Player &player);
-//Enemy createMonster();
-void displayFightMenu(Enemy &monster);
-bool playerAttacksFirst(Enemy &monster, Player &player);
-bool monsterAttacksFirst(Enemy &monster, Player &player);
-bool hasRanAway();
+
 
 void displayFightMenu(Enemy &monster)
-{
-
-        
+{    
     cout << "\nYou are being attacked by a " << monster.getName() << endl;
     cout << "You attack first" << endl;
     cout << "What do you choose to do?" << endl;
@@ -118,7 +109,8 @@ void fight(Player &player)
 {
     bool inCombat = 1;
     int playerOption{ 0 };
-    Enemy monster = Enemy::createMonster();
+    //Enemy monster = Enemy::createMonster();
+    Enemy monster = Enemy("y", 1, 1, 1, 1);
 
     if (player.getSpeed() > monster.getSpeed())
     {
