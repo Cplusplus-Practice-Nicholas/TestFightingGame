@@ -21,7 +21,7 @@ void Enemy::takeDamage(int damageValue)
     health = health - damageValue;
 }
 
-static Enemy createMonster()
+Enemy Enemy::createMonster()
 {
     using json = nlohmann::json;
 

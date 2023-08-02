@@ -1,5 +1,6 @@
 #include <iostream>
 #include "helper.h"
+#include "classes/Enemy.h"
 
 using namespace std;
 
@@ -109,8 +110,7 @@ void fight(Player &player)
 {
     bool inCombat = 1;
     int playerOption{ 0 };
-    //Enemy monster = Enemy::createMonster();
-    Enemy monster = Enemy("y", 1, 1, 1, 1);
+    Enemy monster = Enemy::createMonster();
 
     if (player.getSpeed() > monster.getSpeed())
     {
