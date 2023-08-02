@@ -4,7 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-//#include <nlohmann/json.hpp>
+#include <nlohmann/json.hpp>
 
 class Enemy
 {
@@ -23,7 +23,7 @@ public:
 // Public Methods
     int attackDamage();
     void takeDamage(int damageValue);
-    //static Enemy createMonster();
+    static Enemy createMonster();
     int getHealth();
     int getSpeed();
     std::string getName();

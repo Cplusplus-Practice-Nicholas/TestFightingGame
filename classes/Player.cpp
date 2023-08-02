@@ -4,8 +4,8 @@
 Player::Player(std::string x)
     {
         name = x;
-        strength = randomNumber(currentTime);
-        speed = randomNumber(currentTime + 1);
+        strength = Player::randomNumber(currentTime);
+        speed = Player::randomNumber(currentTime + 1);
     }
 
 // Member Methods

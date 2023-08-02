@@ -1,25 +1,17 @@
-#include <iostream>
-#include <vector>
+#include "Room.h"
 
-using namespace std;
 
-class Room
+int* Room::generateRoom()
 {
 
-
-public:
-
-static int* generateRoom()
-{
-
-     string description[3] 
+     std::string description[3] 
     {
         "You enter a dank dark room lit by only a single torch",
         "The room is warm and inviting with a soft light filling it",
         "A sickly smell hits you as you pass the rooms threshold"
     };
 
-    string actionPhrase[2]
+    std::string actionPhrase[2]
     {
         "You are being attacked",
         "You find the room empty"
@@ -32,8 +24,8 @@ static int* generateRoom()
     srand(time(nullptr) + 1);
     int randomAction = 1 + (rand() % 2);
 
-    cout << description[randomDescription] << endl;
-    cout << actionPhrase[randomAction] << endl;
+    std::cout << description[randomDescription] << std::endl;
+    std::cout << actionPhrase[randomAction] << std::endl;
 
     int arr[2] = {randomDescription, randomAction};
 
@@ -41,5 +33,3 @@ static int* generateRoom()
     
     return arr_ptr;
 }
-
-};

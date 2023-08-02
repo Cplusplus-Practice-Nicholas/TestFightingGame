@@ -6,7 +6,7 @@
 
 
 // Method Declerations
-extern void fight(Player& player);
+void fight(Player& player);
 //Enemy createMonster();
 void displayFightMenu(Enemy& monster);
 bool playerAttacksFirst(Enemy& monster, Player& player);

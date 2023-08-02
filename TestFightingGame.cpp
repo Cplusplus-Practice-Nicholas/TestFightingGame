@@ -23,7 +23,7 @@ int main()
     
     cout << "Enter the name of your Player: ";
     getline(cin,playerName);
-    Player player(playerName);
+    Player player = Player(playerName);
     cout <<"\n\n";
     player.showStats();
     cout << '\n';
