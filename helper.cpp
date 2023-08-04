@@ -86,17 +86,10 @@ bool monsterAttacksFirst(Enemy &monster, Player &player)
     
 }
 
-bool hasRanAway()
+bool hasRanAway(Player &player, Enemy &monster)
 {
-    srand(time(nullptr));
-    int playerRandom{ 1 + (rand() % 10) };
-    cout << playerRandom << endl;
-
-    srand(time(nullptr) + 1);
-    int monsterRandom{ 1 + (rand() % 10) };
-    cout << monsterRandom << endl;
     
-    if (playerRandom >= monsterRandom)
+    if (player.getSpeed() >= monster.getSpeed())
     {
         cout << "You got away" << endl;
         return 0;
@@ -126,7 +119,7 @@ void fight(Player &player)
             }
             else if (playerOption == 2)
             {
-                inCombat = hasRanAway();
+                inCombat = hasRanAway(player, monster);
             }
         }
     }
@@ -144,7 +137,7 @@ void fight(Player &player)
             }
             else if (playerOption == 2)
             {
-                inCombat = hasRanAway();
+                inCombat = hasRanAway(player, monster);
             }
         }
     }

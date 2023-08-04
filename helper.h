@@ -7,10 +7,10 @@
 
 // Method Declerations
 void fight(Player& player);
-//Enemy createMonster();
+Enemy createMonster();
 void displayFightMenu(Enemy& monster);
 bool playerAttacksFirst(Enemy& monster, Player& player);
 bool monsterAttacksFirst(Enemy& monster, Player& player);
-bool hasRanAway();
+bool hasRanAway(Player &player, Enemy &monster);
 
 #endif
