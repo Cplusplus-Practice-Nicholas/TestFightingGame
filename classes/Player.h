@@ -15,7 +15,6 @@ private:
     int strength;
     int speed;
     int weaponDamage{ 2 };
-    time_t currentTime = time(NULL);
     int score{0};
 
 public:

@@ -1,11 +1,10 @@
 #include "Player.h"
 
-// Constructor
+// Constructor with initalizer list
 Player::Player(std::string x)
+    : name{x}, strength{Player::randomNumber(time(nullptr))}, speed{Player::randomNumber(time(nullptr)+1)}
     {
-        name = x;
-        strength = Player::randomNumber(currentTime);
-        speed = Player::randomNumber(currentTime + 1);
+        
     }
 
 // Member Methods

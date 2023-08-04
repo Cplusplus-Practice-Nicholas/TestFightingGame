@@ -1,13 +1,10 @@
 #include "Enemy.h"    
 
-// Constructor
-Enemy::Enemy(std::string a, int b, int c, int d, int e)
+// Constructor with initalizer list
+Enemy::Enemy(std::string a, int b, int c, int d, int e) 
+    : name{a}, health{b}, strength{c}, speed{d}, damage{e}
 {
-    name = a;
-    health = b;
-    strength = c;
-    speed = d;
-    damage = e;
+    
 }    
 
 // Member Methods
