@@ -1,10 +1,10 @@
 //#include "test.cpp"
 #include <iostream>
 #include <string>
-#include "classes/Player.h"
-#include "classes/Enemy.h"
+#include "../headers/Player.h"
+#include "../headers/Enemy.h"
 #include "helper.h"
-#include "classes/Room.h"
+//#include "classes/Room.h"
 
 
 using namespace std;
