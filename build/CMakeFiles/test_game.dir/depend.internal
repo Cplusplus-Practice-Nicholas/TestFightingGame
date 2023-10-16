@@ -8,6 +8,12 @@ CMakeFiles/test_game.dir/src/classes/Player.cpp.o
  /home/user/testfightinggame/src/classes/Player.cpp
  /home/user/testfightinggame/src/headers/Player.h
 CMakeFiles/test_game.dir/src/helper.cpp.o
+ /home/user/testfightinggame/src/headers/Enemy.h
+ /home/user/testfightinggame/src/headers/Player.h
+ /home/user/testfightinggame/src/headers/helper.h
  /home/user/testfightinggame/src/helper.cpp
 CMakeFiles/test_game.dir/src/main.cpp.o
+ /home/user/testfightinggame/src/headers/Enemy.h
+ /home/user/testfightinggame/src/headers/Player.h
+ /home/user/testfightinggame/src/headers/helper.h
  /home/user/testfightinggame/src/main.cpp

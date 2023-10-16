@@ -10,10 +10,6 @@
 ../headers/Enemy.h
 /home/user/testfightinggame/src/headers/Enemy.h
 
-/home/user/testfightinggame/src/classes/Player.cpp
-../headers/Player.h
-/home/user/testfightinggame/src/headers/Player.h
-
 /home/user/testfightinggame/src/headers/Enemy.h
 iostream
 -
@@ -34,25 +30,31 @@ iostream
 stdlib.h
 -
 
+/home/user/testfightinggame/src/headers/helper.h
+Player.h
+/home/user/testfightinggame/src/headers/Player.h
+Enemy.h
+/home/user/testfightinggame/src/headers/Enemy.h
+
 /home/user/testfightinggame/src/helper.cpp
 iostream
 -
-../headers/helper.h
-/home/user/testfightinggame/headers/helper.h
-../headers/Enemy.h
-/home/user/testfightinggame/headers/Enemy.h
-../headers/Player.h
-/home/user/testfightinggame/headers/Player.h
+headers/helper.h
+/home/user/testfightinggame/src/headers/helper.h
+headers/Enemy.h
+/home/user/testfightinggame/src/headers/Enemy.h
+headers/Player.h
+/home/user/testfightinggame/src/headers/Player.h
 
 /home/user/testfightinggame/src/main.cpp
 iostream
 -
 string
 -
-../headers/Player.h
-/home/user/testfightinggame/headers/Player.h
-../headers/Enemy.h
-/home/user/testfightinggame/headers/Enemy.h
-../headers/helper.h
-/home/user/testfightinggame/headers/helper.h
+headers/Player.h
+/home/user/testfightinggame/src/headers/Player.h
+headers/Enemy.h
+/home/user/testfightinggame/src/headers/Enemy.h
+headers/helper.h
+/home/user/testfightinggame/src/headers/helper.h
 

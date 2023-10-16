@@ -1,7 +1,7 @@
 #include <iostream>
-#include "../headers/helper.h"
-#include "../headers/Enemy.h"
-#include "../headers/Player.h"
+#include "headers/helper.h"
+#include "headers/Enemy.h"
+#include "headers/Player.h"
 
 using namespace std;
 

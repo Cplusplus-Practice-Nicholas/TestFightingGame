@@ -23,7 +23,7 @@ void Enemy::takeDamage(int damageValue)
 
 Enemy Enemy::createMonster()
 {
-    std::cout << std::filesystem::current_path()
+    //std::cout << std::filesystem::current_path()
    /* using json = nlohmann::json;
     
 

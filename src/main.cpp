@@ -1,9 +1,9 @@
 //#include "test.cpp"
 #include <iostream>
 #include <string>
-#include "../headers/Player.h"
-#include "../headers/Enemy.h"
-#include "../headers/helper.h"
+#include "headers/Player.h"
+#include "headers/Enemy.h"
+#include "headers/helper.h"
 //#include "classes/Room.h"
 
 
