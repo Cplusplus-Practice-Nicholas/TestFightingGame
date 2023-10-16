@@ -1,4 +1,4 @@
-#include "Player.h"
+#include "../headers/Player.h"
 
 // Constructor with initalizer list
 Player::Player(std::string x)

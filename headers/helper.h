@@ -1,8 +1,8 @@
 #ifndef _HELPER_H_
 #define _HELPER_H_
 
-#include "classes/Player.h"
-#include "classes/Enemy.h"
+#include "Player.h"
+#include "Enemy.h"
 
 
 // Method Declerations

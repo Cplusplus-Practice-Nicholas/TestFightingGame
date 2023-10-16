@@ -1,4 +1,7 @@
-#include "Enemy.h"    
+#include "../headers/Enemy.h" 
+//#include <"ifstream">
+//#include <"filesystem">
+//#include <"iostream">
 
 // Constructor with initalizer list
 Enemy::Enemy(std::string a, int b, int c, int d, int e) 
@@ -20,7 +23,9 @@ void Enemy::takeDamage(int damageValue)
 
 Enemy Enemy::createMonster()
 {
-    using json = nlohmann::json;
+    std::cout << std::filesystem::current_path()
+   /* using json = nlohmann::json;
+    
 
 // Gets random number and converts to a string
     srand(time(nullptr));
@@ -35,7 +40,7 @@ Enemy Enemy::createMonster()
 
     Enemy monster = Enemy(monsterData["name"], monsterData["health"], monsterData["strength"], monsterData["speed"], monsterData["damage"]);
 
-    return monster;
+    return monster; */
 }
 
 int Enemy::getHealth()
