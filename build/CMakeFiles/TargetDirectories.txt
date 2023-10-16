@@ -1,0 +1,3 @@
+/home/user/testfightinggame/build/CMakeFiles/rebuild_cache.dir
+/home/user/testfightinggame/build/CMakeFiles/edit_cache.dir
+/home/user/testfightinggame/build/CMakeFiles/test_game.dir
