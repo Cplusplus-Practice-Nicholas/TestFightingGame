@@ -15,6 +15,7 @@ add_executable(
     src/headers/Enemy.h
     src/headers/helper.h 
     src/json/enemy.json
+    src/json/nlohmann/json.hpp
 )
 
 target_link_libraries(test_game PRIVATE ${JSON_LIBRARY})

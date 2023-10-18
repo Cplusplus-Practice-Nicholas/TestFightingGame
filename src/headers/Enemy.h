@@ -4,7 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <jsoncpp/json/json.h>
+#include "../json/nlohmann/json.hpp"
 
 class Enemy
 {

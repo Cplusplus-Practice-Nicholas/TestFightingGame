@@ -20,6 +20,7 @@ void Enemy::takeDamage(int damageValue)
 
 Enemy Enemy::createMonster()
 {
+    using json = nlohmann::json;
     
 // Gets random number and converts to a string
     srand(time(nullptr));
@@ -27,29 +28,14 @@ Enemy Enemy::createMonster()
     std::string convertedId = std::to_string(randomId);
 
 // Open a JSON file
-    //Json::Value root;
-    //Json::Reader reader;
-    //std::ifstream data("src/json/enemy.json", std::ifstream::binary);
-    //data >> root;
-    //std::cout << root;
-    //bool works = reader.parse(data, root, false);
-    //std::cout << works << std::endl;
-    //Json::Value::Members names = root.getMemberNames();
-    //for(int i{0}; i < 2; i++)
-    //{
-        //std::cout << names[0] << std::endl;
-    //}
-    //data.close();
+    std::ifstream f("../json/enemy.json");
+    json data = json::parse(f);
 
-        //std::ifstream f("json/enemy.json");
-        //json data = json::parse(f);
-
-    //json monsterData = data[convertedId];
+    json monsterData = data[convertedId];
     
+    Enemy monster = Enemy(monsterData["name"], monsterData["health"], monsterData["strength"], monsterData["speed"], monsterData["damage"]);
 
-    //Enemy monster = Enemy(monsterData["name"], monsterData["health"], monsterData["strength"], monsterData["speed"], monsterData["damage"]);
-
-    //return monster;
+    return monster;
 }
 
 int Enemy::getHealth()
