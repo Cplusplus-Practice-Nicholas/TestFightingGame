@@ -1,7 +1,4 @@
 #include "../headers/Enemy.h" 
-//#include <"ifstream">
-//#include <"filesystem">
-//#include <"iostream">
 
 // Constructor with initalizer list
 Enemy::Enemy(std::string a, int b, int c, int d, int e) 
@@ -23,24 +20,36 @@ void Enemy::takeDamage(int damageValue)
 
 Enemy Enemy::createMonster()
 {
-    //std::cout << std::filesystem::current_path()
-   /* using json = nlohmann::json;
     
-
 // Gets random number and converts to a string
     srand(time(nullptr));
     int randomId = 1 + (rand() % 3);
     std::string convertedId = std::to_string(randomId);
 
 // Open a JSON file
-        std::ifstream f("json/enemy.json");
-        json data = json::parse(f);
+    //Json::Value root;
+    //Json::Reader reader;
+    //std::ifstream data("src/json/enemy.json", std::ifstream::binary);
+    //data >> root;
+    //std::cout << root;
+    //bool works = reader.parse(data, root, false);
+    //std::cout << works << std::endl;
+    //Json::Value::Members names = root.getMemberNames();
+    //for(int i{0}; i < 2; i++)
+    //{
+        //std::cout << names[0] << std::endl;
+    //}
+    //data.close();
 
-    json monsterData = data[convertedId];
+        //std::ifstream f("json/enemy.json");
+        //json data = json::parse(f);
 
-    Enemy monster = Enemy(monsterData["name"], monsterData["health"], monsterData["strength"], monsterData["speed"], monsterData["damage"]);
+    //json monsterData = data[convertedId];
+    
 
-    return monster; */
+    //Enemy monster = Enemy(monsterData["name"], monsterData["health"], monsterData["strength"], monsterData["speed"], monsterData["damage"]);
+
+    //return monster;
 }
 
 int Enemy::getHealth()
