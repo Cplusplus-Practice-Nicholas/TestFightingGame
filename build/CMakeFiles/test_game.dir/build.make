@@ -124,6 +124,7 @@ test_game: CMakeFiles/test_game.dir/src/classes/Player.cpp.o
 test_game: CMakeFiles/test_game.dir/src/classes/Enemy.cpp.o
 test_game: CMakeFiles/test_game.dir/src/helper.cpp.o
 test_game: CMakeFiles/test_game.dir/build.make
+test_game: /usr/lib/x86_64-linux-gnu/libjsoncpp.so
 test_game: CMakeFiles/test_game.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/user/testfightinggame/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable test_game"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_game.dir/link.txt --verbose=$(VERBOSE)
