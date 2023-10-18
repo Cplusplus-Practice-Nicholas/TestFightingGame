@@ -33,8 +33,8 @@ Enemy Enemy::createMonster()
     std::string convertedId = std::to_string(randomId);
 
 // Open a JSON file
-    std::ifstream f("json/enemy.json");
-    json data = json::parse(f);
+        std::ifstream f("json/enemy.json");
+        json data = json::parse(f);
 
     json monsterData = data[convertedId];
 
