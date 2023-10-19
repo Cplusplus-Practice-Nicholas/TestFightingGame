@@ -14,7 +14,6 @@ add_executable(
     src/headers/Player.h
     src/headers/Enemy.h
     src/headers/helper.h 
-    src/json/enemy.json
     src/json/nlohmann/json.hpp
 )
 

@@ -9,6 +9,8 @@
 /home/user/testfightinggame/src/classes/Enemy.cpp
 ../headers/Enemy.h
 /home/user/testfightinggame/src/headers/Enemy.h
+filesystem
+-
 
 /home/user/testfightinggame/src/headers/Enemy.h
 iostream
@@ -19,32 +21,6 @@ string
 -
 ../json/nlohmann/json.hpp
 /home/user/testfightinggame/src/json/nlohmann/json.hpp
-
-/home/user/testfightinggame/src/headers/Player.h
-string
--
-vector
--
-iostream
--
-stdlib.h
--
-
-/home/user/testfightinggame/src/headers/helper.h
-Player.h
-/home/user/testfightinggame/src/headers/Player.h
-Enemy.h
-/home/user/testfightinggame/src/headers/Enemy.h
-
-/home/user/testfightinggame/src/helper.cpp
-iostream
--
-headers/helper.h
-/home/user/testfightinggame/src/headers/helper.h
-headers/Enemy.h
-/home/user/testfightinggame/src/headers/Enemy.h
-headers/Player.h
-/home/user/testfightinggame/src/headers/Player.h
 
 /home/user/testfightinggame/src/json/nlohmann/json.hpp
 algorithm
@@ -427,16 +403,4 @@ any
 -
 string_view
 -
-
-/home/user/testfightinggame/src/main.cpp
-iostream
--
-string
--
-headers/Player.h
-/home/user/testfightinggame/src/headers/Player.h
-headers/Enemy.h
-/home/user/testfightinggame/src/headers/Enemy.h
-headers/helper.h
-/home/user/testfightinggame/src/headers/helper.h
 

@@ -1,10 +1,8 @@
-//#include "test.cpp"
 #include <iostream>
 #include <string>
 #include "headers/Player.h"
 #include "headers/Enemy.h"
 #include "headers/helper.h"
-//#include "classes/Room.h"
 
 
 using namespace std;
@@ -13,9 +11,6 @@ using namespace std;
 
 int main()
 {
-    // Uncommit to run tests
-    //unitTests();
-
     // Game Variables
     bool gameOn {1};
     string playerName;
@@ -54,7 +49,7 @@ int main()
                                     //system("cls");
                                     cout << "***********************\n" << endl; 
                                     cout << "GAME OVER" << endl;
-                                   // cout << "\nFinal Score: " << player.score << endl;
+                                    //cout << "\nFinal Score: " << player.score << endl;
                                     cout << "\n*********************\n" << endl;
                                 }
                             //}
