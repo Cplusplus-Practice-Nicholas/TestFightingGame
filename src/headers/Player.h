@@ -16,6 +16,7 @@ private:
     int speed;
     int weaponDamage{ 2 };
     int score{0};
+    std::vector<std::string[2]> inventory;
 
 public:
 // Public Constructor
@@ -30,6 +31,7 @@ public:
     void updateScore();
     int getHealth();
     int getSpeed();
+    void setHealth(int num);
 };
 
 #endif
