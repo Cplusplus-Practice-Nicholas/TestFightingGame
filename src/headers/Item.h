@@ -2,8 +2,6 @@
 #define _ITEM_H_
 
 #include <iostream>
-#include "Player.h"
-#include "../json/nlohmann/json.hpp"
 
 class Item
 {
@@ -20,8 +18,6 @@ public:
     std::string getDescription();
     std::string getEffect();
     std::string getType();
-    void doEffect(Player &player);
-    static Item createItem();
 };
 
 #endif

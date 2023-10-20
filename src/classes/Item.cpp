@@ -26,7 +26,3 @@ std::string Item::getType()
     return type;
 }
 
-void Item::doEffect(Player &player)
-{
-    
-}
