@@ -30,6 +30,7 @@ public:
     void updateScore();
     int getHealth();
     int getSpeed();
+    void setHealth(int num);
 };
 
 #endif

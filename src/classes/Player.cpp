@@ -52,3 +52,8 @@ int Player::getSpeed()
 {
     return speed;
 }
+
+void Player::setHealth(int num)
+{
+    health += num;
+}
