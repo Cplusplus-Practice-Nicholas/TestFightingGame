@@ -16,7 +16,7 @@ private:
     int speed;
     int weaponDamage{ 2 };
     int score{0};
-    std::vector<std::string[2]> inventory;
+    std::vector<std::vector<std::string>> inventory;
 
 public:
 // Public Constructor

@@ -46,7 +46,7 @@ int main()
                cout << "GAME OVER" << endl;
                cout << "\n*********************\n" << endl;
             }
-         {  
+         } 
          break;
          case 2:
          {
@@ -71,8 +71,8 @@ int main()
          {
             cout << "\nInvalid Entery. Please enter a valid value.\n" << endl;
          }
-      }
-   }
+        }
+    }
    
    return 0;
 }
