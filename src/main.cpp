@@ -33,10 +33,33 @@ int main()
       // system("cls");
       switch (playerInput)
       {
-      case 1:
-      {
-         fight(player);
-         if (player.getHealth() <= 0)
+         case 1:
+         {
+            fight(player);
+            if(player.getHealth() <= 0)
+            {
+               gameOn = 0;
+               cout << "***********************\n" << endl; 
+               cout << "GAME OVER" << endl;
+               cout << "\n*********************\n" << endl;
+            }
+         } 
+         break;
+         case 2:
+         {
+            cout << '\n';
+            player.showStats();
+            cout << '\n';
+         }
+         break;
+         case 3:
+         {
+            cout << '\n';
+            player.showCurrentWeapon();
+            cout << '\n';
+         }
+         break;
+         case 4:
          {
             gameOn = 0;
             cout << "***********************\n"
@@ -45,33 +68,8 @@ int main()
             cout << "\n*********************\n"
                  << endl;
          }
-      }
-      break;
-      case 2:
-      {
-         cout << '\n';
-         player.showStats();
-         cout << '\n';
-      }
-      break;
-      case 3:
-      {
-         cout << '\n';
-         player.showCurrentWeapon();
-         cout << '\n';
-      }
-      break;
-      case 4:
-      {
-         gameOn = 0;
-      }
-      break;
-      default:
-      {
-         cout << "\nInvalid Entery. Please enter a valid value.\n"
-              << endl;
-      }
-      }
-   }
+        }
+    }
+   
    return 0;
 }
