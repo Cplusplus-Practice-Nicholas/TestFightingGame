@@ -1,5 +1,0 @@
-name: Bat
-health: 5
-strength: 3
-speed: 7
-damage: 2
