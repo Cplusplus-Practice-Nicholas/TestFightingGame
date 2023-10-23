@@ -2,46 +2,46 @@
 
 // Constructor with initalizer list
 Player::Player(std::string x)
-    : name{x}, strength{Player::randomNumber(time(nullptr))}, speed{Player::randomNumber(time(nullptr)+1)}
-    {
-        
-    }
+    : name{x}, strength{Player::randomNumber(time(nullptr))}, speed{Player::randomNumber(time(nullptr) + 1)}
+{
+}
 
 // Member Methods
 int Player::randomNumber(time_t num)
-    {
-        srand((unsigned) num);
-        return 1 + (rand() % 10);
-    }
+{
+    srand((unsigned)num);
+    return 1 + (rand() % 10);
+}
 int Player::attackDamage()
-    {
-        return weaponDamage + strength;
-    }
+{
+    return weaponDamage + strength;
+}
 
 void Player::showStats()
-    {
-        std::cout << "Player: " << name << std::endl;
-        std::cout << "Score: " << score << std::endl;
-        std::cout << "Health: " << health << std::endl;
-        std::cout << "Strength: " << strength << std::endl;
-        std::cout << "Speed: " << speed << std::endl;
-    }
+{
+    std::cout << "Player: " << name << std::endl;
+    std::cout << "Score: " << score << std::endl;
+    std::cout << "Health: " << health << std::endl;
+    std::cout << "Strength: " << strength << std::endl;
+    std::cout << "Speed: " << speed << std::endl;
+    std::cout << "Coins: " << coins << std::endl;
+}
 
 void Player::showCurrentWeapon()
-    {
-        std::cout << "Sword" << std::endl;
-        std::cout << "Base Damage: " << weaponDamage << std::endl;
-    }
+{
+    std::cout << "Sword" << std::endl;
+    std::cout << "Base Damage: " << weaponDamage << std::endl;
+}
 
 void Player::takeDamage(int damageValue)
-    {
-        Player::health = Player::health - damageValue;
-    }
+{
+    Player::health = Player::health - damageValue;
+}
 
 void Player::updateScore()
-    {
-        score += 1;
-    }
+{
+    score += 1;
+}
 
 int Player::getHealth()
 {
@@ -56,4 +56,14 @@ int Player::getSpeed()
 void Player::setHealth(int num)
 {
     health += num;
+}
+
+int Player::getCoins()
+{
+    return coins;
+}
+
+void Player::setCoins(int num)
+{
+    coins += num;
 }
