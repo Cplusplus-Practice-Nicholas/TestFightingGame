@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.13)
 project(classes)
-add_libary(
+add_library(
 classes 
 Player.cpp
 Enemy.cpp
