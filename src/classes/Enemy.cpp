@@ -1,8 +1,8 @@
 #include "../headers/Enemy.h" 
 
 // Constructor with initalizer list
-Enemy::Enemy(std::string a, int b, int c, int d, int e) 
-    : name{a}, health{b}, strength{c}, speed{d}, damage{e}
+Enemy::Enemy(std::string a, int b, int c, int d, int e, int f) 
+    : name{a}, health{b}, strength{c}, speed{d}, damage{e}, coins{f}
 {
     
 }    
@@ -31,7 +31,7 @@ Enemy Enemy::createMonster()
     std::ifstream f("../src/json/enemy.json");
     json data = json::parse(f);
     json monsterData = data[convertedId];   
-    Enemy monster = Enemy(monsterData["name"], monsterData["health"], monsterData["strength"], monsterData["speed"], monsterData["damage"]);
+    Enemy monster = Enemy(monsterData["name"], monsterData["health"], monsterData["strength"], monsterData["speed"], monsterData["damage"], monsterData["coins"]);
     return monster;
 }
 
@@ -48,4 +48,10 @@ int Enemy::getSpeed()
 std::string Enemy::getName()
 {
     return name;
+}
+
+
+int Enemy::getCoins()
+{
+    return coins;
 }
