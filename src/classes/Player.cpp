@@ -88,7 +88,7 @@ void Player::addToInventory(std::string item)
 
 void Player::getInventory()
 {
-    if (inventory == NULL)
+    if (inventory.is_null() == 1)
     {
         std::cout << "Inventory Empty" << std::endl;
         std::cout << '\n';
