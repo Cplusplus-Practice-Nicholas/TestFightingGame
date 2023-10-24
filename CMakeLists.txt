@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
-project(test_game)
+project(tests)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -14,11 +14,20 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
  
+enable_testing() 
 
 add_executable(
-    test_game 
-    src/main.cpp 
-    src/helper.cpp
+    tests
+    tests/Player_test.cpp
 )
-target_link_directories(test_game PRIVATE ${CMAKE_SOURCE_DIR}/src/classes/build/)
-target_link_libraries(test_game classes)
+
+target_link_directories(tests PRIVATE ${CMAKE_SOURCE_DIR}/src/classes/build/)
+
+target_link_libraries(
+    tests
+    classes
+    Gtest::gtest_main
+)
+
+include(GoogleTest)
+gtest_discover_tests(tests)
