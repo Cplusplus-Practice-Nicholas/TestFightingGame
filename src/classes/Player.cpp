@@ -67,3 +67,37 @@ void Player::setCoins(int num)
 {
     coins += num;
 }
+
+void Player::addToInventory(std::string item)
+{
+    int count{0};
+    for (auto i : inventory)
+    {
+        if (i["name"] == item)
+        {
+            i["count"] += 1;
+        }
+        count += 1;
+    }
+
+    inventory[count]["name"] = item;
+    inventory[count]["count"] = 1;
+}
+
+void Player::getInventory()
+{
+    if (inventory == NULL)
+    {
+        std::cout << "Inventory Empty" << std::endl;
+        std::cout << '\n';
+    }
+    else
+    {
+        for (auto i : inventory)
+        {
+            std::cout << i["name"] << std::endl;
+            std::cout << i["count"] << std::endl;
+            std::cout << '\n';
+        }
+    }
+}

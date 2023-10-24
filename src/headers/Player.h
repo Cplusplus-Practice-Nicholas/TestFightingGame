@@ -4,7 +4,10 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include <stdlib.h>
+#include <fstream>
+#include "../json/nlohmann/json.hpp"
+
+using json = nlohmann::json;
 
 class Player
 {
@@ -16,7 +19,7 @@ private:
     int speed;
     int weaponDamage{2};
     int score{0};
-    std::vector<std::vector<std::string>> inventory;
+    json inventory;
     int coins{0};
 
 public:
@@ -35,6 +38,8 @@ public:
     void setHealth(int num);
     int getCoins();
     void setCoins(int num);
+    void addToInventory(std::string item);
+    void getInventory();
 };
 
 #endif
