@@ -26,11 +26,12 @@ int main()
       cout << "1 - Next Fight" << endl;
       cout << "2 - Show Stats" << endl;
       cout << "3 - Show Current Weapon" << endl;
-      cout << "4 - Quit" << endl;
+      cout << "4 - Show Player Inventory" << endl;
+      cout << "5 - Quit" << endl;
       cout << "\nEnter the number: ";
       cin >> playerInput;
-      system("clear");
-      // system("cls");
+      // system("clear");
+      system("cls");
       switch (playerInput)
       {
       case 1:
@@ -60,8 +61,14 @@ int main()
          player.showCurrentWeapon();
          cout << '\n';
       }
-      break;
       case 4:
+      {
+         cout << '\n';
+         player.getInventory();
+         cout << '\n';
+      }
+      break;
+      case 5:
       {
          gameOn = 0;
          cout << "***********************\n"
