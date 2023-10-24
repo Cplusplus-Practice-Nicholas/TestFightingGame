@@ -121,8 +121,7 @@ void fight(Player &player)
         {
             displayFightMenu(monster);
             cin >> playerOption;
-            system("clear");
-            // system("cls");
+            CLEAR;
             if (playerOption == 1)
             {
                 inCombat = playerAttacksFirst(monster, player);
@@ -139,8 +138,7 @@ void fight(Player &player)
         {
             displayFightMenu(monster);
             cin >> playerOption;
-            system("clear");
-            // system("cls");
+            CLEAR;
             if (playerOption == 1)
             {
                 inCombat = monsterAttacksFirst(monster, player);

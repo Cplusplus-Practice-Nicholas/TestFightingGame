@@ -13,3 +13,11 @@ bool monsterAttacksFirst(Enemy &monster, Player &player);
 bool hasRanAway(Player &player, Enemy &monster);
 
 #endif
+
+#ifdef _WIN32
+#define CLEAR system("cls")
+#endif
+
+#ifdef linux
+#define CLEAR system("clear")
+#endif

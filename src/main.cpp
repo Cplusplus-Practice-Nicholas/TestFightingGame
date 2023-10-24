@@ -30,8 +30,7 @@ int main()
       cout << "5 - Quit" << endl;
       cout << "\nEnter the number: ";
       cin >> playerInput;
-      // system("clear");
-      system("cls");
+      CLEAR;
       switch (playerInput)
       {
       case 1:
