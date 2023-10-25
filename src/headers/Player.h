@@ -37,10 +37,6 @@ public:
     int getSpeed();
     int getCoins();
     void setHealth(int num);
-<<<<<<< HEAD
-=======
-    int getCoins();
->>>>>>> 00e5947dc404cb4da37b20f3f5b24692581c829c
     void setCoins(int num);
     void addToInventory(std::string item);
     void getInventory();
