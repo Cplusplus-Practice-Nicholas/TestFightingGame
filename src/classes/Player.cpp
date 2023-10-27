@@ -70,7 +70,7 @@ void Player::setCoins(int num)
     coins += num;
 }
 
-void Player::addToInventory(std::string item)
+int Player::addToInventory(std::string item)
 {
     int count{0};
     for (auto i : inventory)
@@ -78,12 +78,14 @@ void Player::addToInventory(std::string item)
         if (i["name"] == item)
         {
             i["count"] += 1;
+            return 0;
         }
         count += 1;
     }
 
     inventory[count]["name"] = item;
     inventory[count]["count"] = 1;
+    return 0;
 }
 
 void Player::getInventory()
