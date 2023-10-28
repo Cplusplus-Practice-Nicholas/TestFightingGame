@@ -60,6 +60,7 @@ int main()
          player.showCurrentWeapon();
          cout << '\n';
       }
+      break;
       case 4:
       {
          cout << '\n';
