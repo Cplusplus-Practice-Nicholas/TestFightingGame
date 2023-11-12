@@ -86,12 +86,13 @@ int Player::addToInventory(std::string item)
     return 0;
 }
 
-void Player::getInventory()
+int Player::getInventory()
 {
     if (inventory.is_null() == 1)
     {
         std::cout << "Inventory Empty" << std::endl;
         std::cout << '\n';
+        return -1;
     }
     else
     {
@@ -102,4 +103,5 @@ void Player::getInventory()
             std::cout << '\n';
         }
     }
+    return 0;
 }

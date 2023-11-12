@@ -39,7 +39,7 @@ public:
     void setHealth(int num);
     void setCoins(int num);
     int addToInventory(std::string item);
-    void getInventory();
+    int getInventory();
 };
 
 #endif
